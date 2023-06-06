@@ -1,0 +1,26 @@
+<h1 class="title">URL Shortener</h1>
+
+<%= form_with(model: @url, url: urls_path, method: :post, class: "url-form") do |form| %>
+  <%= form.label :long_url, 'Enter a Long URL', class: "form-label" %>
+  <%= form.text_field :long_url, placeholder: 'https://example.com', required: true, class: "form-input" %>
+  <%= form.submit 'Shorten URL', class: "form-submit" %>
+<% end %>
+
+<% if flash[:error] %>
+  <div class="alert error">
+    <%= flash[:error] %>
+  </div>
+<% end %>
+
+<% if flash[:notice] %>
+  <div class="alert notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<% if flash[:success] %>
+  <div class="alert success">
+    <%= flash[:success].html_safe %>
+  </div>
+<% end %>
+

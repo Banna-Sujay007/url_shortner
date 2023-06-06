@@ -1,0 +1,9 @@
+<% if @url %>
+  <h1>Redirecting...</h1>
+  <script>
+    window.location.href = '<%= @url.long_url %>';
+  </script>
+<% else %>
+  <h1>URL not found</h1>
+<% end %>
+
